@@ -30,10 +30,10 @@ public class Jrrp {
     private static int JrrpValue = 0;
     public Jrrp() {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
-        tip = builder.define("Jrrp提示词:","今日人品为:$v $w");
-        PROMPT_WORD_LOW = builder.defineList("随机提示词[0-50]",List.of(""),obj -> true);
-        PROMPT_WORD_HIGH = builder.defineList("随机提示词[51-90]",List.of(""),obj -> true);
-        PROMPT_WORD_HIGHEST = builder.defineList("随机提示词[91-100]",List.of(""),obj -> true);
+        tip = builder.define("Jrrp提示:","今日人品为:$v $w");
+        PROMPT_WORD_LOW = builder.defineList("提示词[0-50]",List.of(""),obj -> true);
+        PROMPT_WORD_HIGH = builder.defineList("提示词[51-90]",List.of(""),obj -> true);
+        PROMPT_WORD_HIGHEST = builder.defineList("提示词[91-100]",List.of(""),obj -> true);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, builder.build());
     }
     @SubscribeEvent
@@ -44,9 +44,9 @@ public class Jrrp {
                     CompoundTag compoundTag = player.getPersistentData();
                     if ((compoundTag.get("jrrpLaseTime") == null || compoundTag.get("jrrp") == null) || (!Objects.requireNonNull(compoundTag.get("jrrpLaseTime")).getAsString().equals(DAY_OF_YEAR))) {
                         player.getPersistentData().putString("jrrpLaseTime", DAY_OF_YEAR);
-                        player.getPersistentData().putString("jrrp", String.valueOf(RandomSource.create().nextInt(101)));
+                        player.getPersistentData().putString("jrrp", String.valueOf(RANDOM_SOURCE.nextInt(101)));
                         compoundTag.putString("jrrpLaseTime", DAY_OF_YEAR);
-                        compoundTag.putString("jrrp", String.valueOf(RandomSource.create().nextInt(101)));
+                        compoundTag.putString("jrrp", String.valueOf(RANDOM_SOURCE.nextInt(101)));
                         player.save(compoundTag);
                     }
                     JrrpValue = Integer.parseInt(Objects.requireNonNull(compoundTag.get("jrrp")).getAsString());
