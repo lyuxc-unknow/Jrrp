@@ -23,8 +23,8 @@ public class Jrrp {
     private static ModConfigSpec.ConfigValue<List<? extends String>> PROMPT_WORD_LOW;
     private static ModConfigSpec.ConfigValue<List<? extends String>> PROMPT_WORD_HIGH;
     private static ModConfigSpec.ConfigValue<List<? extends String>> PROMPT_WORD_HIGHEST;
-    private static final Calendar calendar = Calendar.getInstance();
-    private static final String DAY_OF_YEAR = String.valueOf(calendar.get(Calendar.DAY_OF_YEAR));
+    private static final Calendar CALENDAR = Calendar.getInstance();
+    private static final String DAY_OF_YEAR = String.valueOf(CALENDAR.get(Calendar.DAY_OF_YEAR));
     private static final RandomSource RANDOM_SOURCE = RandomSource.create();
     private static String tipsText;
     private static int JrrpValue = 0;
