@@ -1,0 +1,16 @@
+[
+{
+  "modid": "jrrp",
+  "name": "Jrrp Mod",
+  "description": "Jrrp in Minecraft",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["lyuxc"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
