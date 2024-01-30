@@ -37,5 +37,5 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: Jrrp-NeoForge-${{ env.SHORT_SHA }}
+          name: Jrrp-Forge-${{ env.SHORT_SHA }}
           path: '**/build/libs/'
